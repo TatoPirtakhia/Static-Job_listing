@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 
+    2. Remove default margin
+   */
+* {
+    margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+ */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    font-family: 'Epilogue', sans-serif;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+header {
+  width: 100%;
+  background: #5ca5a5;
+  height: 156px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'League Spartan', sans-serif;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.nav {
+  margin-top: -40px;
+  width: 327px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+}
+.block{
+    display: none;
+}
+.shearch_menu {
+  width: 230px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.clear button {
+  background-color: #ffffff;
+  border: none;
+  width: 40px;
+  height: 25px;
+  color: #7c8f8f;
+  font-size: 16px;
+  font-weight: 700;
+}
+main{
+    margin-top: 60px;
+    width: 327px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.box{
+    width: 327px;
+    height: 250px;
+    background-color:#FFFFFF;
+    padding-left: 20px;
+    display: flex;
+    align-items:flex-start;
+    flex-direction: column;
+    box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+    border-radius: 5px;
+}
+
+.userInfo{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.image{
+    width: 48px;
+    height: 48px;
+    margin-top:-24px;
+    margin-bottom: 8px;
+}
+.position{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #2B3939;
+    margin-bottom: 10px;
+}
+.ul{
+    font-size: 16px;
+    font-weight: 500;
+    color:#7C8F8F ;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 206px;
+    padding-left: 0px;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1440px) {
+  header {
+    width: 1440px;
+    background: #5ca5a5;
+    height: 156px;
+  }
+  .block{
+    display: block;
+  }
+}
