@@ -1,61 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
-/*
-1. Use a more-intuitive box-sizing model.
-*/
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
 }
-
-/* 
-    2. Remove default margin
-   */
-* {
-    margin: 0;
-}
-
-/*
-    3. Allow percentage-based heights in the application
-  */
-
-
-/*
-    Typographic tweaks!
-    4. Add accessible line-height
-    5. Improve text rendering
-  */
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-/*
-    6. Improve media defaults
- */
 img,
 picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
-/*
-    7. Remove built-in form typography styles
-  */
 input,
 button,
 textarea,
 select {
-    font: inherit;
-    font-family: 'Epilogue', sans-serif;
+  font: inherit;
+  font-family: "Epilogue", sans-serif;
 }
 
-/*
-    8. Avoid text overflows
-  */
 p,
 h1,
 h2,
@@ -63,15 +35,12 @@ h3,
 h4,
 h5,
 h6 {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/*
-    9. Create a root stacking context
-  */
 #root,
 #__next {
-    isolation: isolate;
+  isolation: isolate;
 }
 header {
   width: 100%;
@@ -83,11 +52,14 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   min-height: 100vh;
   padding-bottom: 40px;
+  background: rgba(92, 165, 165, 0.1);
 }
-
+.boxIsFeatured{
+  border-left: 5px solid rgba(92, 165, 165, 1);
+}
 .nav {
   margin-top: -40px;
   width: 327px;
@@ -100,8 +72,8 @@ body {
   border-radius: 5px;
   box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
 }
-.block{
-    display: none;
+.block {
+  display: none;
 }
 .shearch_menu {
   width: 230px;
@@ -117,121 +89,149 @@ body {
   color: #7c8f8f;
   font-size: 16px;
   font-weight: 700;
+  cursor: pointer;
 }
-main{
-    margin-top: 60px;
-    width: 327px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.box{
-    width: 327px;
-    height: 250px;
-    background-color:#FFFFFF;
-    padding-left: 20px;
-    display: flex;
-    align-items:flex-start;
-    flex-direction: column;
-    box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
-    border-radius: 5px;
+main {
+  margin-top: 60px;
+  width: 327px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.userInfo{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+.box {
+  width: 327px;
+
+  background-color: #ffffff;
+  padding-left: 20px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+  border-radius: 5px;
 }
 
-.image{
-    width: 48px;
-    height: 48px;
-    margin-top:-24px;
-    margin-bottom: 8px;
-}
-.position{
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 24px;
-    color: #2B3939;
-    margin-bottom: 10px;
-}
-.ul{
-    font-size: 16px;
-    font-weight: 500;
-    color:#7C8F8F ;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 206px;
-    padding-left: 0px;
-    margin: 0;
+.userInfo {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
 }
 
+.image {
+  width: 48px;
+  height: 48px;
+  margin-top: -24px;
+  margin-bottom: 8px;
+}
+.info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.position {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #2b3939;
+}
+.ul {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7c8f8f;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 206px;
+  padding-left: 0px;
+  margin: 0;
+}
 
+.photosnap {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
 
+.userSkils {
+  width: 280px;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid #b7c4c4;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.button {
+  cursor: pointer;
+  background-color: rgba(92, 165, 165, 0.1);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: rgba(92, 165, 165, 1);
+  font-weight: 700;
+  letter-spacing: 0.1;
+}
 
+.Company {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 12px;
+  color: rgba(92, 165, 165, 1);
+  margin-right: 33px;
+}
+.NEW {
+  margin-right: 10px;
+  border: none;
+  width: 51px;
+  height: 24px;
+  background-color: rgba(92, 165, 165, 1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.featured {
+  text-transform: uppercase;
+  padding-left: 9px;
+  padding-right: 8px;
+  height: 24px;
+  background-color: rgba(43, 57, 57, 1);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.containerButton{
+  display: flex;
+}
+.menuButton{
+  background-color: rgba(255, 255, 255, 1);
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(92, 165, 165, 1);
+}
+.removeConatiner{
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(92, 165, 165, 1);
+  border-radius: 0px 4px 4px 0px;
+}
 
 @media (min-width: 1440px) {
   header {
@@ -239,7 +239,7 @@ main{
     background: #5ca5a5;
     height: 156px;
   }
-  .block{
+  .block {
     display: block;
   }
 }
