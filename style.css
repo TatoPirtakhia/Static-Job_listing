@@ -60,6 +60,9 @@ body {
 .boxIsFeatured {
   border-left: 5px solid rgba(92, 165, 165, 1);
 }
+.clear_button{
+  color:rgba(124, 143, 143, 1) ;
+}
 .nav {
   margin-top: -40px;
   width: 327px;
@@ -292,8 +295,24 @@ main {
   .container {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     gap: 35px;
+  }
+  .position:hover{
+    cursor: pointer;
+    color: rgba(92, 165, 165, 1);
+  }
+  .button:hover{
+    background-color: rgba(92, 165, 165, 1);
+    color:rgba(255, 255, 255, 1) ;
+  }
+
+  .clear_button:hover{
+    color: rgba(92, 165, 165, 1);
+  }
+  .removeConatiner:hover{
+    cursor: pointer;
+    background-color: rgba(43, 57, 57, 1);
   }
 }
