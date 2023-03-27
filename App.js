@@ -153,44 +153,57 @@ const menu = document.querySelector(".shearch_menu");
 const main = document.querySelector("body");
 const block = document.querySelector(".block");
 main.addEventListener("click", update);
-
-let clickCategory = [];
+let uniqueMenuButtons = [];
+let removeClick = [];
 let buttons = [];
+
+let containerButton
 function update(e) {
   const { target } = e;
   if (target.classList.contains("button")) {
-    const containerButton = createTag("div", "containerButton");
-    const menuButton = createTag(
-      "button",
-      "menuButton",
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      target.textContent
-    );
-    clickCategory.push(target.textContent)
-    console.log(clickCategory)
-    const remove = createTag("img", "remove", "./images/icon-remove.svg");
-    const removeConatiner = createTag("div", "removeConatiner");
-    removeConatiner.append(remove);
-    containerButton.append(menuButton, removeConatiner);
-    menu.append(containerButton);
-    buttons.push(containerButton)
-    block.style.display = "block";
+     containerButton = createTag("div", "containerButton");
+    removeClick.push(containerButton);
+    addbutton(target.textContent)
   }
 }
-const clearMenu = document.querySelector('.containerButton')
-const clearButton = document.querySelector('.clear_button')
-clearButton.addEventListener('click',() =>{
-    console.log(buttons)
-    for(let i = 0; i < buttons.length; i++){
-        buttons[i].remove()
-    }
- 
-    block.style.display = "none";
-})
+const buttonSet = new Set();
+function addbutton(text) {
+  if (buttonSet.has(text)) {
+    return;
+  }
+  buttonSet.add(text)
+  const menuButton = createTag(
+    "button",
+    "menuButton",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    text
+  );
+  const remove = createTag("img", "remove", "./images/icon-remove.svg");
+  const removeConatiner = createTag("div", "removeConatiner");
+  removeConatiner.append(remove);
+  containerButton.append(menuButton, removeConatiner);
+  menu.append(containerButton);
+  buttons.push(containerButton);
+  block.style.display = "block";
+}
+const clearMenu = document.querySelector(".containerButton");
+const clearButton = document.querySelector(".clear_button");
+clearButton.addEventListener("click", () => {
+  console.log(buttons.length);
+  while (buttons.length > 0) {
+    buttons[0].remove();
+    buttons.shift();
+  }
+  removeClick = [];
+  block.style.display = "none";
+  buttonSet.clear()
+});
+
+const nav = document.querySelector(".shearch_menu");

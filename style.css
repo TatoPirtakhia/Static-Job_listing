@@ -57,7 +57,7 @@ body {
   padding-bottom: 40px;
   background: rgba(92, 165, 165, 0.1);
 }
-.boxIsFeatured{
+.boxIsFeatured {
   border-left: 5px solid rgba(92, 165, 165, 1);
 }
 .nav {
@@ -147,7 +147,7 @@ main {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  width: 206px;
+  gap: 20px;
   padding-left: 0px;
   margin: 0;
 }
@@ -213,17 +213,17 @@ main {
   font-weight: 700;
 }
 
-.containerButton{
+.containerButton {
   display: flex;
 }
-.menuButton{
+.menuButton {
   background-color: rgba(255, 255, 255, 1);
   border: none;
   font-size: 16px;
   font-weight: 700;
   color: rgba(92, 165, 165, 1);
 }
-.removeConatiner{
+.removeConatiner {
   width: 32px;
   height: 32px;
   display: flex;
@@ -234,12 +234,66 @@ main {
 }
 
 @media (min-width: 1440px) {
-  header {
-    width: 1440px;
-    background: #5ca5a5;
-    height: 156px;
+  .nav {
+    margin-top: -40px;
+    width: 1110px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
   }
-  .block {
-    display: block;
+  .shearch_menu {
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  main {
+    margin-top: 80px;
+    width: 1110px;
+  }
+
+  .box {
+    width: 1110px;
+    padding-left: 40px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 26px;
+    padding-top: 26px;
+    padding-right: 40px;
+    box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+  }
+  .userInfo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+    width: 100%;
+  }
+  .image {
+    width: 88px;
+    height: 88px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .userSkils {
+    width: 100%;
+    display: flex;
+    padding-top: 0px;
+    margin-top: 0px;
+    border-top: none;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 35px;
   }
 }
