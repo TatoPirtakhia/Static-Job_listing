@@ -58,6 +58,8 @@ let buttons = [];
 
 let containerButton;
 let arrayFromSet = [];
+let arryOfRemove = []
+const shearchMenu = document.querySelector('.shearch_menu')
 function update(e) {
   const { target } = e;
   if (target.classList.contains("button")) {
@@ -66,17 +68,78 @@ function update(e) {
     arrayFromSet = Array.from(buttonSet);
     list.innerHTML = "";
 
-    for (let jsonElement = 0; jsonElement < data.length; jsonElement++) {
-      const { role, level, languages } = data[jsonElement];
+    for (let index = 0; index < data.length; index++) {
+      const { role, level, languages } = data[index];
       const arrayOfData = [...role, ...level, ...languages];
       let result = "";
       result = arrayFromSet.every((element) => arrayOfData.includes(element));
       if (result) {
-        makeBox(jsonElement);
+        makeBox(index);
       }
     }
   }
+const Buton = document.querySelectorAll(".menuButton");
+const img = document.querySelectorAll(".removeConatiner");
+
+for (let i = 0; i < img.length; i++) {
+  img[i].onclick =  () => {
+    let buttonText = Buton[i].textContent;
+    makeNavBar(buttonText)
+    if(shearchMenu.innerHTML === ''){
+      block.style.display = "none";
+      makeOriginalBoxes()
+    }else{
+      for (let index = 0; index < data.length; index++) {
+        const { role, level, languages } = data[index];
+        const arrayOfData = [...role, ...level, ...languages];
+        let result = "";
+        result = arrayFromSet.every((element) => arrayOfData.includes(element));
+        if (result) {
+          makeBox(index);
+        }
+      }
+    }
+  };
 }
+}
+function makeNavBar(buttonText){
+    shearchMenu.innerHTML = ''
+    let index = arrayFromSet.indexOf(buttonText)
+    buttonSet.delete(buttonText)
+    if (index!= -1) {
+      arrayFromSet.splice(index,1)
+    }
+    console.log(arrayFromSet)
+    for (let i=0 ; i<arrayFromSet.length;i++){
+      containerButton = createTag("div", "containerButton");
+      addNavbutton(arrayFromSet[i])
+    }
+    
+
+}
+function addNavbutton(text) {
+  const menuButton = createTag(
+    "button",
+    "menuButton",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    text
+  );
+  const remove = createTag("img", "remove", "./images/icon-remove.svg");
+  const removeConatiner = createTag("div", "removeConatiner");
+  removeConatiner.append(remove);
+  containerButton.append(menuButton, removeConatiner);
+  menu.append(containerButton);
+  buttons.push(containerButton);
+  block.style.display = "block";
+}
+
 const buttonSet = new Set();
 function addbutton(text) {
   if (buttonSet.has(text)) {
@@ -250,7 +313,6 @@ function makeBox(index) {
     box.classList.add("boxIsFeatured");
   }
 }
-
 
 function makeOriginalBoxes() {
   for (let index = 0; index < data.length; index++) {
