@@ -53,12 +53,10 @@ const main = document.querySelector("body");
 const block = document.querySelector(".block");
 main.addEventListener("click", update);
 
-let removeClick = [];
 let buttons = [];
 
 let containerButton;
 let arrayFromSet = [];
-let arryOfRemove = []
 const shearchMenu = document.querySelector('.shearch_menu')
 function update(e) {
   const { target } = e;
@@ -86,9 +84,11 @@ for (let i = 0; i < img.length; i++) {
     let buttonText = Buton[i].textContent;
     makeNavBar(buttonText)
     if(shearchMenu.innerHTML === ''){
+      list.innerHTML = ''
       block.style.display = "none";
       makeOriginalBoxes()
     }else{
+      list.innerHTML = ''
       for (let index = 0; index < data.length; index++) {
         const { role, level, languages } = data[index];
         const arrayOfData = [...role, ...level, ...languages];
@@ -105,11 +105,13 @@ for (let i = 0; i < img.length; i++) {
 function makeNavBar(buttonText){
     shearchMenu.innerHTML = ''
     let index = arrayFromSet.indexOf(buttonText)
-    buttonSet.delete(buttonText)
+    
     if (index!= -1) {
       arrayFromSet.splice(index,1)
+      buttonSet.delete(buttonText)
     }
     console.log(arrayFromSet)
+
     for (let i=0 ; i<arrayFromSet.length;i++){
       containerButton = createTag("div", "containerButton");
       addNavbutton(arrayFromSet[i])
@@ -137,7 +139,6 @@ function addNavbutton(text) {
   containerButton.append(menuButton, removeConatiner);
   menu.append(containerButton);
   buttons.push(containerButton);
-  block.style.display = "block";
 }
 
 const buttonSet = new Set();
@@ -174,7 +175,6 @@ clearButton.addEventListener("click", () => {
     buttons[0].remove();
     buttons.shift();
   }
-  removeClick = [];
   arrayFromSet = [];
   list.innerHTML = "";
   makeOriginalBoxes();
